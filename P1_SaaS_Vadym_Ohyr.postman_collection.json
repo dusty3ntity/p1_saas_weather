@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "b8521517-b1ca-48a6-bbbd-217a68fd398f",
+		"name": "P1_SaaS_Vadym_Ohyr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10126143"
+	},
+	"item": [
+		{
+			"name": "Forecast for today",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment');",
+							"",
+							"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"123asd123\",\n    \"requester_name\": \"Vadym Ohyr\",\n    \"location\": \"Lviv, Ukraine\",\n    \"date\": \"{{currentdate}}\"\n}"
+				},
+				"url": {
+					"raw": "http://52.87.231.183:8000/weather",
+					"protocol": "http",
+					"host": [
+						"52",
+						"87",
+						"231",
+						"183"
+					],
+					"port": "8000",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forecast for my birthday",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment');",
+							"",
+							"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"123asd123\",\n    \"requester_name\": \"Vadym Ohyr\",\n    \"location\": \"Brovary\",\n    \"date\": \"2023-03-31\"\n}"
+				},
+				"url": {
+					"raw": "http://52.87.231.183:8000/weather",
+					"protocol": "http",
+					"host": [
+						"52",
+						"87",
+						"231",
+						"183"
+					],
+					"port": "8000",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historical data",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment');",
+							"",
+							"pm.environment.set('currentdate', moment().format((\"YYYY-MM-DD\")));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"123asd123\",\n    \"requester_name\": \"Vadym Ohyr\",\n    \"location\": \"Kiev\",\n    \"date\": \"2022-02-24\"\n}"
+				},
+				"url": {
+					"raw": "http://52.87.231.183:8000/weather",
+					"protocol": "http",
+					"host": [
+						"52",
+						"87",
+						"231",
+						"183"
+					],
+					"port": "8000",
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
